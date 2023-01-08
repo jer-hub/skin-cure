@@ -108,11 +108,15 @@ const ContainerView = () => {
 
           }}
         >
+            <Text>jjg</Text>
           <View style={styles.icon}>
             {displayDelete(profile.id)}
 
-            <Image source={{ uri: profile.image_url }} style={styles.imgicon} />
-            <Text>{profile.result}</Text>
+            <Text>{profile.id}jjg</Text>
+            <Text>jjg</Text>
+            <Text>jjg</Text>
+            <Text>jjg</Text>
+            <Text>jjg</Text>
           </View>
         </TouchableOpacity>
       );

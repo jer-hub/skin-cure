@@ -41,7 +41,7 @@ class ProfileView(APIView):
         profile = Profile.objects.get(guest=guest)
         result = Result()
         result.profile = profile
-        result.name = self.request.POST['name']
+        result.description = self.request.POST['description']
         result.age = self.request.POST['age']
         result.sex = self.request.POST['sex']
         result.skin_disease = self.request.POST['result']
@@ -60,15 +60,6 @@ def delProfile(request):
     serializer = ResultSerializer(results, many=True)
     return Response(serializer.data)
 
-@api_view(http_method_names=["DELETE"])
-def delCase(request):
-    request.session["profileCases"] = [item for item in request.session["profileCases"] if request.data['id'] != item['id']]
-    return Response(request.session["profileCases"])
-
-@api_view(http_method_names=["GET"])
-def profileCases(request, profileID):
-    profileCases = [item for item in request.session["profileCases"] if profileID == item['user_id']]
-    return Response(profileCases)
 
 @api_view(["POST"])
 @ignore_csrf

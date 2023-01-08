@@ -110,7 +110,7 @@ const ContainerView = ({ navigation }) => {
               source={{uri: `http://${URL}:8000${profile.pic}`}}
               style={styles.imgicon}
             />
-            <Text>{profile.name}</Text>
+            <Text>{profile.created_at}</Text>
           </View>
         </TouchableOpacity>
       );

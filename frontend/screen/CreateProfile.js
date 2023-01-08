@@ -8,7 +8,7 @@ import { URL } from "../url";
 function CreateProfile({ navigation }) {
   const route = useRoute();
 
-  const [name, setName] = useState(null);
+  const [desc, setDesc] = useState(null);
   const [age, setAge] = useState(null);
   const [sex, setSex] = useState(null);
   const [errors, setErrors] = useState({
@@ -23,12 +23,8 @@ function CreateProfile({ navigation }) {
   ];
 
   const handleCreateProfile = async () => {
-    let nameError = null;
     let ageError = null;
     let sexError = null;
-    if (name === null) {
-      nameError = "Please write a name.";
-    }
     if (age === null) {
       ageError = "Please write your age.";
     }
@@ -39,12 +35,11 @@ function CreateProfile({ navigation }) {
       sexError = "Please select a sex.";
     }
     setErrors({
-      nameError: nameError,
       ageError: ageError,
       sexError: sexError,
     });
     console.log(errors);
-    if (nameError == null && ageError == null && sexError == null) {
+    if (ageError == null && sexError == null) {
       console.log("entered")
 
       const formData = new FormData();
@@ -53,7 +48,7 @@ function CreateProfile({ navigation }) {
         name: "image.jpg",
         type: "image/jpeg",
       });
-      formData.append("name", name)
+      formData.append("description", desc)
       formData.append("age", age)
       formData.append("sex", sex)
       formData.append("result", route.params.result)
@@ -86,15 +81,12 @@ function CreateProfile({ navigation }) {
       <View style={{ width: "100%" }}>
         <TextInput
           style={styles.baseTextInput}
-          value={name}
-          onChangeText={(name) => {
-            setName(name);
+          value={desc}
+          onChangeText={(desc) => {
+            setDesc(desc);
           }}
-          placeholder="Name"
+          placeholder="Description(optional)"
         />
-        {errors.nameError && (
-          <Text style={{ color: "red" }}>{errors.nameError}</Text>
-        )}
         <TextInput
           style={styles.baseTextInput}
           value={age}
