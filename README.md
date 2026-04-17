@@ -31,13 +31,13 @@ skin-cure/
 2. Install dependencies:
 
    ```bash
-   pip install -r /home/runner/work/skin-cure/skin-cure/backend/requirements.txt
+   pip install -r backend/requirements.txt
    ```
 
 3. Apply migrations:
 
    ```bash
-   cd /home/runner/work/skin-cure/skin-cure/backend
+   cd backend
    python manage.py migrate
    ```
 
@@ -54,13 +54,13 @@ The API base URL is `http://<host>:8000/skincure/`.
 1. Install dependencies:
 
    ```bash
-   cd /home/runner/work/skin-cure/skin-cure/frontend
+   cd frontend
    npm install
    ```
 
 2. Set backend host in:
 
-   `/home/runner/work/skin-cure/skin-cure/frontend/url.js`
+   `frontend/url.js`
 
    ```js
    export const URL = "YOUR_BACKEND_IP";
