@@ -63,7 +63,7 @@ The API base URL is `http://<host>:8000/skincure/`.
    `frontend/url.js`
 
    ```js
-   export const URL = "YOUR_BACKEND_IP";
+   export const URL = "192.168.1.100"; // host/IP only (no http:// and no :8000)
    ```
 
 3. Start Expo:
