@@ -79,7 +79,7 @@ The API base URL is `http://<host>:8000/skincure/`.
 Configured in `backend/skincure/urls.py`:
 
 - `GET /skincure/guest/` – gets/creates guest+profile and returns serialized `Result` records
-- `GET /skincure/guest2/` – alternate guest lookup helper that returns a plain success text response
+- `GET /skincure/guest2/` – legacy helper/test endpoint that returns a plain success text response
 - `GET /skincure/profiles/` – list saved results
 - `POST /skincure/profiles/` – save a result with metadata + image
 - `DELETE /skincure/delete/profile/` – delete a saved result by `id`
