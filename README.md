@@ -78,7 +78,7 @@ The API base URL is `http://<host>:8000/skincure/`.
 
 Configured in `backend/skincure/urls.py`:
 
-- `GET /skincure/guest/` – create/get guest session and return results
+- `GET /skincure/guest/` – in current implementation, gets or creates a guest/profile record and returns results
 - `GET /skincure/guest2/` – secondary guest helper endpoint
 - `GET /skincure/profiles/` – list saved results
 - `POST /skincure/profiles/` – save a result with metadata + image
@@ -89,4 +89,4 @@ Configured in `backend/skincure/urls.py`:
 
 - This repository is currently configured for development (e.g., `DEBUG=True`, broad `ALLOWED_HOSTS`).
 - The frontend depends on reachable backend networking from simulator/device.
-- Model inference loads `./ml_models/final_model.h5` at request time.
+- Model inference currently loads `./ml_models/final_model.h5` per request (simple but slower than startup caching).
