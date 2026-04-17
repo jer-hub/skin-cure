@@ -87,6 +87,6 @@ Configured in `backend/skincure/urls.py`:
 
 ## Development notes
 
-- This repository is currently configured for development (e.g., `DEBUG=True`, broad `ALLOWED_HOSTS`).
+- Configure Django production settings before deployment (disable debug mode, restrict allowed hosts, and manage secrets securely).
 - The frontend depends on reachable backend networking from simulator/device.
 - Model inference currently loads `./ml_models/final_model.h5` per request (simple but slower than startup caching).
